@@ -75,7 +75,7 @@
                 }
 
                 // Change the background color of the <nav> element
-                topnav.style.background = '#8b00a2'; // Change to the desired color
+                topnav.style.background = '#808080'; // Change to the desired color
             } else {
                 console.error('Unable to locate the "Start" link and/or shortcutsDiv.');
             }
