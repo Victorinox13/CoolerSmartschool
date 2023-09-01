@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         smartschoolagenda2
+// @name         CoolerSmartschool
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  Maak Smartschool mooier.
-// @author       VictorDeleeck
-// @match        https://sjs.smartschool.be/*
+// @description  Maak Smartschool cooler.
+// @author       VictorDL
+// @match        https://???.smartschool.be/* <- jouw smartschool adress
 // @grant        none
 // ==/UserScript==
 (function() {
