@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Maak Smartschool cooler.
 // @author       VictorDL
-// @match        https://???.smartschool.be/* <- jouw smartschool adress
+// @match        https://.smartschool.be/* <- jouw smartschool adress
 // @grant        none
 // ==/UserScript==
 (function() {
