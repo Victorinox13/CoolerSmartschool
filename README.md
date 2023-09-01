@@ -1,3 +1,13 @@
+
+
+https://github.com/Victorinox13/CoolerSmartschool/raw/main/CoolerSmartschool.user.js
+
+
+
+
+
+
+
 # CoolerSmartschool
 Met deze github repository kan je je smartschool veel cooler maken in een paar stappen.
 
