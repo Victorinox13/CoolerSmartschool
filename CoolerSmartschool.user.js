@@ -24,7 +24,7 @@
         var berichtenElement = document.querySelector('a.js-btn-messages.topnav__btn'); // Change to anchor
         if (berichtenElement) {
             berichtenElement.textContent = "";
-            berichtenElement.setAttribute('style', 'background-image: url("/smsc/svg/schoolbord/schoolbord_24x24.sv"); min-width: 50px; background-position: 50% center; background-repeat: no-repeat;');
+            berichtenElement.setAttribute('style', 'background-image: url("/smsc/svg/schoolbord/schoolbord_24x24.svgt"); min-width: 50px; background-position: 50% center; background-repeat: no-repeat;');
             berichtenElement.setAttribute('href', '/?module=Messages&file=index&function=main')
         } else {
             console.error('messages is not demure');
