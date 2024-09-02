@@ -9,26 +9,35 @@
 // ==/UserScript==
 (function() {
     'use strict';
-
+    console.log("shit is working");
     // Function to insert the new elements and change background color
     function insertElementsAndChangeBackground() {
         // Create the new elements
         var schoolAgendaElement = document.createElement('a');
-        schoolAgendaElement.href = "/index.php?module=Agenda";
+        schoolAgendaElement.href = "/planner/main/user/";
         schoolAgendaElement.className = "js-btn-home topnav__btn";
-        schoolAgendaElement.style.backgroundImage = "url('/smsc/svg/address_book2/address_book2_24x24.svg')";
+        schoolAgendaElement.style.backgroundImage = "url('https://github.com/Victorinox13/CoolerSmartschool/blob/main/imresizer-1725274840155.jpg?raw=true')"
         schoolAgendaElement.style.minWidth = "50px"; // Updated minWidth to "50px"
         schoolAgendaElement.style.backgroundPosition = "50%";
         schoolAgendaElement.style.backgroundRepeat = "no-repeat";
 
-        var berichtenElement = document.createElement('a'); // Change to anchor
-        berichtenElement.href = "/index.php?module=Messages&file=index&function=main";
-        berichtenElement.className = "js-btn-messages topnav__btn";
-        berichtenElement.style.backgroundImage = 'url("/smsc/svg/mail/mail_24x24.svg")';
-        berichtenElement.style.minWidth = "50px"; // Set minWidth to "50px" for "Berichten"
-        berichtenElement.style.backgroundPosition = "50% center";
-        berichtenElement.style.backgroundRepeat = "no-repeat";
+        var berichtenElement = document.querySelector('a.js-btn-messages.topnav__btn'); // Change to anchor
+        if (berichtenElement) {
+            berichtenElement.textContent = "";
+            berichtenElement.setAttribute('style', 'background-image: url("/smsc/svg/mail/mail_24x24.svg"); min-width: 50px; background-position: 50% center; background-repeat: no-repeat;');
+            berichtenElement.setAttribute('href', '/?module=Messages&file=index&function=main')
+        } else {
+            console.error('messages is not demure');
+        }
 
+        var startElement = document.querySelector('a.js-btn-home.topnav__btn.topnav__btn--push-right'); // Change to anchor
+        if (startElement) {
+            startElement.textContent = "";
+            startElement.setAttribute('style', 'background-image: url("https://github.com/Victorinox13/CoolerSmartschool/blob/main/imresizer-1725276013894.jpg?raw=true"); min-width: 50px; background-position: 50% center; background-repeat: no-repeat;');
+            startElement.setAttribute('href', '/')
+        } else {
+            console.error('starrt is not demure');
+        }
         var vakkenElement = document.querySelector('button.js-btn-courses.topnav__btn');
         if (vakkenElement) {
             // Remove the title text from Vakken button
@@ -42,7 +51,7 @@
 
         // Find the parent <nav> element
         var topnav = document.querySelector('nav.topnav');
-
+        topnav.setAttribute('style', 'background-color: rgb( 255, 255, 255); background-image: url("https://github.com/Victorinox13/CoolerSmartschool/blob/main/imresizer-1725276947111.jpg?raw=true"); min-width: 50px; background-position: 50% center; background-size: initial;');
         if (topnav) {
             // Find all child elements within the <nav> element
             var childElements = topnav.children;
@@ -63,7 +72,7 @@
                 topnav.insertBefore(schoolAgendaElement, shortcutsDiv);
 
                 // Insert the "Berichten" anchor before the shortcutsDiv
-                shortcutsDiv.parentNode.insertBefore(berichtenElement, shortcutsDiv);
+                shortcutsDiv.parentNode.insertAfter(berichtenElement, shortcutsDiv);
 
                 // Find the element to replace (Vakken button)
                 var vakkenButton = document.querySelector('button.js-btn-courses.topnav__btn');
@@ -72,6 +81,13 @@
                     vakkenButton.parentNode.replaceChild(vakkenElement, vakkenButton);
                 } else {
                     console.error('Unable to find the Vakken button element to replace.');
+                }
+                var startButton = document.querySelector('a.js-btn-home topnav__btn.topnav__btn--push-right');
+                if (startButton) {
+                    // Replace the Vakken button element
+                    startButton.parentNode.replaceChild(startElement, startButton);
+                } else {
+                    console.error('Unable to find the agenda button element to replace.');
                 }
 
                 // Change the background color of the <nav> element
